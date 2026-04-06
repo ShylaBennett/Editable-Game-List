@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Room Database</string>
+    <string name="tvName">Game Name</string>
+    <string name="tvGameDesc">Game Description</string>
+    <string name="tvPrice">Price</string>
+    <string name="tvGenre">Genre</string>
+    <string name="btnSave">Save</string>
+    <string name="btnCancel">Cancel</string>
+    <string name="btnConsoleInfo">Console Info</string>
+</resources>

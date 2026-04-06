@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+    <variable
+        name="editGame"
+        type="ca.nscc.mobi3002.shyla.roomdatabase.VideoGames" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".GameEditDetailsActivity">
+
+        <EditText
+            android:id="@+id/etGenre"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="92dp"
+            android:ems="10"
+            android:inputType="text"
+            app:layout_constraintBaseline_toBaselineOf="@+id/tvGenre"
+            app:layout_constraintStart_toEndOf="@+id/tvGenre"
+            android:text="@={editGame.genreText}"/>
+
+        <Button
+            android:id="@+id/btnCancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="64dp"
+            android:layout_marginEnd="44dp"
+            android:text="@string/btnCancel"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/etGenre" />
+
+        <Button
+            android:id="@+id/btnSave"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="76dp"
+            android:text="@string/btnSave"
+            app:layout_constraintEnd_toStartOf="@+id/btnCancel"
+            app:layout_constraintHorizontal_bias="0.235"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvGenre" />
+
+        <EditText
+            android:id="@+id/etPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="100dp"
+            android:ems="10"
+            android:inputType="text"
+            app:floatValue="@={editGame.GamePrice}"
+            app:layout_constraintBaseline_toBaselineOf="@+id/tvPrice"
+            app:layout_constraintStart_toEndOf="@+id/tvPrice"
+            />
+
+        <EditText
+            android:id="@+id/etGameDesc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:ems="10"
+            android:inputType="text"
+            app:layout_constraintBaseline_toBaselineOf="@+id/tvGameDesc"
+            app:layout_constraintStart_toEndOf="@+id/tvGameDesc"
+            android:text="@={editGame.GameDescription}"
+            />
+
+        <EditText
+            android:id="@+id/etName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="56dp"
+            android:ems="10"
+            android:inputType="text"
+            app:layout_constraintBaseline_toBaselineOf="@+id/tvName"
+            app:layout_constraintStart_toEndOf="@+id/tvName"
+            android:text="@={editGame.GameName}"/>
+
+        <TextView
+            android:id="@+id/tvName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="48dp"
+            android:layout_marginTop="256dp"
+            android:text="@string/tvName"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tvGameDesc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="48dp"
+            android:text="@string/tvGameDesc"
+            app:layout_constraintStart_toStartOf="@+id/tvName"
+            app:layout_constraintTop_toBottomOf="@+id/tvName" />
+
+        <TextView
+            android:id="@+id/tvPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="52dp"
+            android:text="@string/tvPrice"
+            app:layout_constraintStart_toStartOf="@+id/tvGameDesc"
+            app:layout_constraintTop_toBottomOf="@+id/tvGameDesc" />
+
+        <TextView
+            android:id="@+id/tvGenre"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="48dp"
+            android:text="@string/tvGenre"
+            app:layout_constraintStart_toStartOf="@+id/tvPrice"
+            app:layout_constraintTop_toBottomOf="@+id/tvPrice" />
+
+        <Button
+            android:id="@+id/btnConsoleInfo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="36dp"
+            android:text="@string/btnConsoleInfo"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/btnCancel"
+            app:layout_constraintStart_toEndOf="@+id/btnSave" />
+
+        <ImageView
+            android:id="@+id/imgEditGame"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toTopOf="@+id/etName"
+            app:layout_constraintDimensionRatio="16:9"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.272"
+            app:srcCompat="@drawable/animal_crossing_new_horizons"
+            gameImage="@{editGame.ImageID}"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
